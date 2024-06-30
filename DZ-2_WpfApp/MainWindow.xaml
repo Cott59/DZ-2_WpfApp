@@ -1,0 +1,98 @@
+﻿<Window x:Class="DZ_2_WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DZ_2_WpfApp"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="450" Width="800" FontSize="30" WindowState="Maximized" >
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"></RowDefinition>
+            <RowDefinition Height="1.3*"></RowDefinition>
+            <RowDefinition Height="0.3*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <!--Заголовок-->
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="4" FontSize="24"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center">
+            <Run Foreground="#FFED1717" FontWeight="Black" > Регистрация</Run>
+            <Run>сотрудников</Run>
+            <LineBreak/>
+            <Run>компании</Run>
+         </TextBlock>
+
+        <!--ПАРОЛИ ДОЛЖНОСТЬ КОММЕНТАРИИ-->
+        <DockPanel  LastChildFill="False" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" >
+            <Label DockPanel.Dock="Top" FontSize="14" >Логин:</Label>
+            <PasswordBox DockPanel.Dock="Top" FontSize="14"></PasswordBox>
+            <Label DockPanel.Dock="Top" FontSize="14" >Пароль:</Label>
+            <PasswordBox DockPanel.Dock="Top" FontSize="14"></PasswordBox>
+            <Label DockPanel.Dock="Top" FontSize="14" >Повторите пароль:</Label>
+            <PasswordBox DockPanel.Dock="Top" FontSize="14" PasswordChar="#" ></PasswordBox>
+            <Label DockPanel.Dock="Top" FontSize="14" >Должность:</Label>
+            <ComboBox DockPanel.Dock="Top" FontSize="14">
+                <ComboBoxItem IsSelected="True" >Администратор</ComboBoxItem>
+                <ComboBoxItem >Уборщик</ComboBoxItem>
+                <ComboBoxItem >Сантехник</ComboBoxItem>
+                <ComboBoxItem >Водитель</ComboBoxItem>
+                <ComboBoxItem >Менеджер</ComboBoxItem>
+            </ComboBox>
+            <Label DockPanel.Dock="Top" FontSize="14" >Комментарий:</Label>
+            <TextBox DockPanel.Dock="Top"  VerticalScrollBarVisibility="Visible" FontSize="14" MinLines="3" MaxLines="3" AcceptsReturn="True" AcceptsTab="True"></TextBox>
+        </DockPanel>
+
+        <!--КНОПКИ-->
+        <StackPanel Grid.Column="1" Grid.Row="3" Margin="0 0 5 0"  VerticalAlignment="Center">
+              <Button  Background="#FF5AA56C" 
+                      Content="Зарегистрировать" FontSize="15" 
+                      MinHeight="40" MaxHeight="150" MinWidth="100" MaxWidth="160" ></Button>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="2" Grid.Row="3" Margin="5 0 0 0"  VerticalAlignment="Center">
+                <Button  Background="#FFC85B5B"   
+                      Content="Отменить"  FontSize="15" 
+                      MinHeight="40" MaxHeight="150" MinWidth="100" MaxWidth="160"></Button>
+        </StackPanel>
+            
+        <!--Боковые панели-->
+        <StackPanel Margin="10 2 20 0"  Grid.Column="0" Grid.Row="1" Orientation="Vertical" >
+                <TextBlock FontSize="24" TextDecorations="Underline" Text ="Отзывы на техподдержку"/>
+                <ListBox Name="Otzivs">
+                    <ListBoxItem FontSize="22">Дёмин Александр Ильич</ListBoxItem>
+                    <ListBoxItem FontSize="14">До него смогли дозвониться</ListBoxItem>
+                    <ListBoxItem FontSize="22">Павлов Анатолий</ListBoxItem>
+                    <ListBoxItem FontSize="14">Смог дозвониться до техподдержки за 15 минут</ListBoxItem>
+                    <ListBoxItem FontSize="22">Харитонов Аркадий</ListBoxItem>
+                    <ListBoxItem FontSize="14">Не дозвонился, но решил всё сам</ListBoxItem>
+                </ListBox>
+        </StackPanel>
+        
+        <StackPanel Margin="20 2 10 0"  Grid.Column="3" Grid.Row="1" Orientation="Vertical">
+                <TextBlock FontSize="24" TextDecorations="Underline" Text ="Техническая поддержка"/>
+                <ListBox Name="Otzivsf">
+                    <ListBoxItem FontSize="22">Дёмин Александр Ильич</ListBoxItem>
+                    <ListBoxItem FontSize="14">8 (902) 254-14-65</ListBoxItem>
+                    <ListBoxItem FontSize="22">Павлов Анатолий</ListBoxItem>
+                    <ListBoxItem FontSize="14">8 (902) 254-14-63</ListBoxItem>
+                    <ListBoxItem FontSize="22">Харитонов Аркадий</ListBoxItem>
+                    <ListBoxItem FontSize="14">8 (902) 254-16-85</ListBoxItem>
+                </ListBox>
+        </StackPanel>
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>
